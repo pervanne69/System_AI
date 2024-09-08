@@ -82,6 +82,7 @@ public class Minimax {
         System.out.format("Сумма элементов массива через цикл do while = %s\n", get_total_do_while(arr));
         System.out.format("Максимальный элемент массива = %s\n", count_max(arr));
         System.out.format("Минимальный элемент массива = %s\n", count_min(arr));
+        sc.close();
 
 
     }

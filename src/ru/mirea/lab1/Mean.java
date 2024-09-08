@@ -41,6 +41,6 @@ public class Mean {
 
         System.out.format("\nСумма элементов массива = %s\n", total);
         System.out.format("Среднее арифметическое элементов массива = %s", total / n);
-
+        sc.close();
     }
 }
