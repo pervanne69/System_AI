@@ -1,6 +1,5 @@
-package ru.mirea.lab2;
+package ru.mirea.lab2.lab2_1;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Tester {
@@ -13,6 +12,7 @@ public class Tester {
         }
         return false;
     }
+
     private static boolean validateGender(Object gender) {
         if (gender instanceof Character) {
             char gender_f = (Character) gender;
@@ -20,10 +20,11 @@ public class Tester {
         }
         return false;
     }
+
     public static void main(String[] args) {
-        String name;
-        String email;
-        char gender;
+        String name = null;
+        String email = null;
+        char gender = '-';
         String genderTmp;
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите имя автора: ");
@@ -52,13 +53,19 @@ public class Tester {
                             System.out.println(gender);
                         }
                     }
-                    Author author1 = new Author(name, email, gender);
-                    System.out.printf("Имя автора: %s, Почта автора: %s, Пол автора: %c",
-                            author1.getName(), author1.getEmail(), author1.getGender());
                 }
 
             }
         }
+        Author author1 = new Author(name, email, gender);
+        System.out.printf("Имя автора: %s, Почта автора: %s, Пол автора: %c\n",
+                author1.getName(), author1.getEmail(), author1.getGender());
+
+        author1.setName("самвел");
+
+        System.out.printf("Имя автора: %s, По чта автора: %s, Пол автора: %c\n",
+                author1.getName(), author1.getEmail(), author1.getGender());
+
 
     }
 }
