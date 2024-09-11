@@ -1,13 +1,33 @@
 package ru.mirea.lab2.lab2_2;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DogKennel {
 
-    public static void addDogToKennel() {};
+    private List<Dog> dogs;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+    public DogKennel() {
+        this.dogs = new ArrayList<>();
     }
+
+    public void getDogsHumanAge() {
+        for (Dog dog : dogs) {
+            System.out.println(dog.getNickname() + " " + dog.toHumanAge(dog.getAge()));
+        }
+    }
+
+    public void addDogToKennel(Dog dog) {
+        dogs.add(dog);
+    }
+
+
+
+    public void getDogsNames() {
+        for (Dog dog : dogs) {
+            System.out.println(dog.getNickname());
+        }
+    }
+
 }
