@@ -23,13 +23,13 @@ public class FactorialCalculator {
             if (sc.hasNextInt()) {
                 number = sc.nextInt();
                 if (number >= 0) {
-                    validInput = true;  // Корректный ввод, выходим из цикла
+                    validInput = true;
                 } else {
                     System.out.println("Число не должно быть отрицательным. Попробуйте снова.");
                 }
             } else {
                 System.out.println("Некорректный ввод. Пожалуйста, введите целое число.");
-                sc.next();  // Очищаем некорректный ввод
+                sc.next();
             }
         }
         long result = calculateFactorial(number);
