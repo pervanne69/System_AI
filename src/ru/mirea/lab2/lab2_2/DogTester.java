@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DogTester {
     public static boolean validateAge(Object age) {
-        return !(age instanceof Integer);
+        return age instanceof Integer;
     }
 
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class DogTester {
         DogKennel dogKennel = new DogKennel();
 
         String dogName;
-        int age;
+        int age = 0;
         Object age_tmp;
 
         System.out.println("Welcome to our dog kennel");
@@ -21,10 +21,14 @@ public class DogTester {
         do {
             System.out.print("Write a name of your dog: ");
             dogName = scanner.nextLine();
+            System.out.print("Write a correct age of your dog: ");
+            age_tmp = scanner.nextLine();
             do {
                 System.out.print("Write a correct age of your dog: ");
                 age_tmp = scanner.nextLine();
-            } while (!validateAge(age_tmp));
+            } while (!scanner.hasNextInt());
+            age_tmp = scanner.nextLine();
+            System.out.println(age_tmp);
             age = (Integer) age_tmp;
 
             dogKennel.addDogToKennel(new Dog(dogName, age));
