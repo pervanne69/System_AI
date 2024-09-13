@@ -1,14 +1,8 @@
 package ru.mirea.lab3.lab3_1;
 
-
 import java.util.Scanner;
-
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-
-
 import java.util.Arrays;
-import java.util.Collections;
 
 public class RandomReal {
     public static void main(String[] args) {
@@ -54,6 +48,8 @@ public class RandomReal {
         System.out.println("Array 2 after sorting: ");
 
         System.out.println(Arrays.toString(arr2));
+
+        scanner.close();
 
     }
 }
