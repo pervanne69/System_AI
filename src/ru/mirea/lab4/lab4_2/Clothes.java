@@ -1,13 +1,25 @@
 package ru.mirea.lab4.lab4_2;
 
 public abstract class Clothes {
-    int clothSize;
-    double cost;
-    String color;
+    protected Size clothSize;
+    protected double cost;
+    protected String color;
 
-    public Clothes(int clothSize, double cost, String color) {
+    public Clothes(Size clothSize, double cost, String color) {
         this.clothSize = clothSize;
         this.cost = cost;
         this.color = color;
+    }
+
+    public Size getclothSize() {
+        return clothSize;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public String getColor() {
+        return color;
     }
 }

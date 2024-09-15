@@ -1,6 +1,6 @@
 package ru.mirea.lab4.lab4_2;
 
-public enum Sizes {
+public enum Size {
     XXS(32) {
         @Override
         public String getDescription() {
@@ -35,7 +35,7 @@ public enum Sizes {
     private final int euroSize;
 
 
-    Sizes(int euroSize) {
+    Size(int euroSize) {
         this.euroSize = euroSize;
     }
 
