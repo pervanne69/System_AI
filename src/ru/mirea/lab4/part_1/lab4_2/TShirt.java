@@ -1,4 +1,4 @@
-package ru.mirea.lab4.lab4_2;
+package ru.mirea.lab4.part_1.lab4_2;
 
 public class TShirt extends Clothes implements MenClothing, WomenClothing {
     public TShirt(Size clothSize, double cost, String color) {

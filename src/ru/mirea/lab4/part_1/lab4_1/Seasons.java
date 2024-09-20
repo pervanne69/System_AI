@@ -1,4 +1,4 @@
-package ru.mirea.lab4.lab4_1;
+package ru.mirea.lab4.part_1.lab4_1;
 
 
 public class Seasons {
