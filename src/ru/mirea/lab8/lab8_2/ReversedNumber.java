@@ -3,7 +3,7 @@ package ru.mirea.lab8.lab8_2;
 import java.util.Scanner;
 
 
-public class Sequence {
+public class ReversedNumber {
     public static long reverse(long n, long reversed) {
         if (n == 0) {
             return reversed;
