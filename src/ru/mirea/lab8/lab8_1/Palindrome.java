@@ -24,6 +24,7 @@ public class Palindrome {
         } else {
             System.out.println("Слово не является палиндромом");
         }
+        sc.close();
     }
 }
 
