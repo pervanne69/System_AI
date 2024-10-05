@@ -1,7 +1,6 @@
 package ru.mirea.lab5.lab5_1;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 
@@ -11,9 +10,9 @@ public class SoccerSimulation extends JFrame {
     private int madridScore = 0;
 
 
-    private JLabel resultLabel = new JLabel("Result 0 X 0");
-    private JLabel lastScorerLabel = new JLabel("Last Scorer: N/A");
-    private JLabel winnerLabel = new JLabel("Winner: DRAW");
+    private final CustomLabel resultLabel;
+    private final CustomLabel lastScorerLabel;
+    private final CustomLabel winnerLabel;
 
     public SoccerSimulation() {
         setTitle("Soccer Match");
@@ -22,7 +21,7 @@ public class SoccerSimulation extends JFrame {
         setLayout(new GridLayout(2, 1));
 
         Color JFrameBackgroundColor = new Color(152, 251, 152);
-        Color labelPanelColor = new Color(60, 179, 113);
+        Color labelPanelColor = new Color(152, 251, 152);
         Color milanButtonBackgroundColor = new Color(255, 215, 0);
         Color milanButtonForegroundColor = new Color(0, 0, 0);
         Color madridButtonBackgroundColor = new Color(255, 127, 80);
@@ -38,15 +37,24 @@ public class SoccerSimulation extends JFrame {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
         buttonPanel.setPreferredSize(new Dimension(1000, 600));
+        buttonPanel.setBackground(labelPanelColor);
+
 
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridBagLayout());
+        centerPanel.setBackground(labelPanelColor);
+
+
+        resultLabel = new CustomLabel("Result: 0 X 0", Color.BLUE, 40);
+        winnerLabel = new CustomLabel("Winner: DRAW", Color.ORANGE, 32);
+        lastScorerLabel = new CustomLabel("Last Scorer: N/A", Color.BLUE, 24);
+
 
         CustomButton milanButton = new CustomButton("AC Milan", milanButtonBackgroundColor,
-                milanButtonForegroundColor);
+                milanButtonForegroundColor, 30);
 
         CustomButton madridButton = new CustomButton("Real Madrid", madridButtonBackgroundColor,
-                madridButtonForegroundColor);
+                madridButtonForegroundColor, 30);
 
         milanButton.addActionListener(_ -> updateScore("AC Milan"));
 
@@ -102,5 +110,6 @@ public class SoccerSimulation extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(SoccerSimulation::new);
     }
+
 
 }
