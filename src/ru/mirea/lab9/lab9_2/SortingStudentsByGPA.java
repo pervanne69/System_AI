@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class SortingStudentsByGPA implements Comparator<Student> {
     @Override
     public int compare(Student student1, Student student2) {
-        return Double.compare(student2.gpa, student2.gpa);
+        return Double.compare(student1.gpa, student2.gpa);
     }
 
     public static void quickSort(Student[] students, int low, int high, Comparator<Student> comparator) {
