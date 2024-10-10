@@ -104,18 +104,18 @@ public class SortingStudents {
         System.out.println("Before Sorting:");
         outArray(students);
 
-        Comparator<Student> scomp = new
+        Comparator<Student> studentComparator = new
                 SortingStudentsByCourse().thenComparing(new
                 SortingStudentsByName()).thenComparing(new
                 SortingStudentsByLastname()).thenComparing(new
                 SortingStudentsBySpeciality()).thenComparing(new
                 SortingStudentsByGroup());
-        quickSort(students, 0, students.length - 1, scomp);
+        quickSort(students, 0, students.length - 1, studentComparator);
 
         System.out.println("\nAfter QuickSort (By Course):");
         outArray(students);
 
-        mergeSort(students, scomp);
+        mergeSort(students, studentComparator);
 
         System.out.println("\nAfter MergeSort (By Course):");
         outArray(students);
