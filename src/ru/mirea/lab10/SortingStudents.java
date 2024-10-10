@@ -76,8 +76,12 @@ public class SortingStudents {
         Student[] students = new Student[n];
 
         for (int i = 0; i < n; i++) {
-            students[i] = new Student("FirstName" + i, "LastName" + i, "Speciality" + i,
-                    random.nextInt(4) + 1, "Group" + i);
+            students[i] = new Student(
+                    "FirstName" + (char) (random.nextInt(65, 91)),
+                    "LastName" + (char) (random.nextInt(65, 91)),
+                    "Speciality" + (char) (random.nextInt(65, 91)),
+                    random.nextInt(4) + 1,
+                    "Group" + (char) (random.nextInt(65, 91)));
         }
 
         return students;
