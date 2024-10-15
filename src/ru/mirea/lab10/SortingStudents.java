@@ -7,6 +7,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 
+/**
+ * The SortingStudents class provides various methods for sorting an array of Student objects.
+ * It includes implementations of QuickSort and MergeSort algorithms.
+ */
 public class SortingStudents {
     public static void quickSort(Student[] students, int low, int high, Comparator<Student> comparator) {
         if (low < high) {
@@ -93,7 +97,7 @@ public class SortingStudents {
         }
     }
 
-    // Main метод
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
