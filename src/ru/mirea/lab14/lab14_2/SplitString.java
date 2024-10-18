@@ -13,15 +13,19 @@ public class SplitString {
         String input = scanner.nextLine();
 
         // Введение регулярного выражения пользователем
-        System.out.print("Введите регулярное выражение для разбивки строки: ");
-        String regex = scanner.nextLine();
+        String regex = "";
+        boolean isValidRegex = false;
 
         // Попытка создания шаблона регулярного выражения
-        try {
-            Pattern.compile(regex);  // Проверяем корректность регулярного выражения
-        } catch (PatternSyntaxException e) {
-            System.out.println("Некорректное регулярное выражение. Попробуйте снова.");
-            return;
+        while (!isValidRegex) {
+            System.out.print("Введите регулярное выражение для разбивки строки: ");
+            regex = scanner.nextLine();
+            try {
+                Pattern.compile(regex);  // Проверяем корректность регулярного выражения
+                isValidRegex = true;
+            } catch (PatternSyntaxException e) {
+                System.out.println("Некорректное регулярное выражение. Попробуйте снова.");
+            }
         }
 
         // Разделение строки по регулярному выражению
