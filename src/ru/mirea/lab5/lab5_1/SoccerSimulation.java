@@ -1,3 +1,4 @@
+
 package ru.mirea.lab5.lab5_1;
 
 import javax.swing.*;
@@ -9,7 +10,6 @@ public class SoccerSimulation extends JFrame {
     private int milanScore = 0;
     private int madridScore = 0;
 
-
     private final CustomLabel resultLabel;
     private final CustomLabel lastScorerLabel;
     private final CustomLabel winnerLabel;
@@ -18,7 +18,7 @@ public class SoccerSimulation extends JFrame {
         setTitle("Soccer Match");
         setSize(new Dimension(700, 700));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(2, 1));
+        setLayout(new BorderLayout());
 
         Color JFrameBackgroundColor = new Color(152, 251, 152);
         Color labelPanelColor = new Color(152, 251, 152);
@@ -29,54 +29,46 @@ public class SoccerSimulation extends JFrame {
 
         setBackground(JFrameBackgroundColor);
 
+        // Верхняя панель с метками
         JPanel labelPanel = new JPanel();
         labelPanel.setLayout(new GridLayout(3, 1));
-        labelPanel.setPreferredSize(new Dimension(700, 600));
-        labelPanel.setBackground(labelPanelColor); // Установите зеленый фон для панели меток
+        labelPanel.setPreferredSize(new Dimension(700, 200));
+        labelPanel.setBackground(labelPanelColor);
 
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout());
-        buttonPanel.setPreferredSize(new Dimension(1000, 600));
+        labelPanel.add(resultLabel = new CustomLabel("Result: 0 X 0", Color.BLUE, 40));
+        labelPanel.add(lastScorerLabel = new CustomLabel("Last Scorer: N/A", Color.BLUE, 24));
+        labelPanel.add(winnerLabel = new CustomLabel("Winner: DRAW", Color.ORANGE, 32));
+
+        add(labelPanel, BorderLayout.NORTH);
+
+        // Центральная панель с кнопками
+        JPanel buttonPanel = new JPanel(new GridBagLayout());
         buttonPanel.setBackground(labelPanelColor);
-
-
-        JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new GridBagLayout());
-        centerPanel.setBackground(labelPanelColor);
-
-
-        resultLabel = new CustomLabel("Result: 0 X 0", Color.BLUE, 40);
-        winnerLabel = new CustomLabel("Winner: DRAW", Color.ORANGE, 32);
-        lastScorerLabel = new CustomLabel("Last Scorer: N/A", Color.BLUE, 24);
-
 
         CustomButton milanButton = new CustomButton("AC Milan", milanButtonBackgroundColor,
                 milanButtonForegroundColor, 30);
-
         CustomButton madridButton = new CustomButton("Real Madrid", madridButtonBackgroundColor,
                 madridButtonForegroundColor, 30);
 
         milanButton.addActionListener(_ -> updateScore("AC Milan"));
-
-
         madridButton.addActionListener(_ -> updateScore("Real Madrid"));
 
-        labelPanel.add(resultLabel);
-        labelPanel.add(lastScorerLabel);
-        labelPanel.add(winnerLabel);
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 1.0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        buttonPanel.add(milanButton);
-        buttonPanel.add(madridButton);
+        buttonPanel.add(milanButton, gbc);
 
-        centerPanel.add(buttonPanel);
+        gbc.gridx = 1;
+        buttonPanel.add(madridButton, gbc);
 
-        add(labelPanel);
-        add(centerPanel);
+        add(buttonPanel, BorderLayout.CENTER);
 
         setVisible(true);
-
     }
-
 
     public void updateScore(String lastScorer) {
         if (lastScorer.equals("AC Milan")) {
@@ -110,6 +102,4 @@ public class SoccerSimulation extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(SoccerSimulation::new);
     }
-
-
 }
