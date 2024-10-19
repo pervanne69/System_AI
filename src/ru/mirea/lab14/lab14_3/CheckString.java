@@ -15,7 +15,7 @@ public class CheckString {
         String incorrectString1 = "abcdefghijklmnoasdfasdpqrstuv18340";
         String incorrectString2 = "abcdefghijklmnopqrstuv1834";
 
-        String regex = "^abcdefghijklmnopqrstuv18340$";
+        String regex = "\\babcdefghijklmnopqrstuv18340\\b";
 
         Pattern pattern = Pattern.compile(regex);
 
