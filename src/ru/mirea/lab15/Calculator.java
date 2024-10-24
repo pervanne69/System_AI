@@ -1,4 +1,4 @@
-package ru.mirea.lab19.lab19_1;
+package ru.mirea.lab15;
 
 import javax.swing.*;
 import java.awt.*;
