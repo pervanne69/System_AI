@@ -1,5 +1,6 @@
 package ru.mirea.lab19;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class LabClassUI {
@@ -18,16 +19,20 @@ public class LabClassUI {
             System.out.println("3. Показать всех студентов");
             System.out.println("4. Выход");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Пропуск новой строки
-
             try {
+                int choice = scanner.nextInt();
+                scanner.nextLine(); // Пропуск новой строки
+
                 switch (choice) {
                     case 1:
                         System.out.println("Введите ФИО студента:");
                         String name = scanner.nextLine();
-                        Student student = labClass.findStudentByName(name);
-                        System.out.println("Найден студент: " + student);
+                        try {
+                            Student student = labClass.findStudentByName(name);
+                            System.out.println("Найден студент: " + student);
+                        } catch (StudentNotFoundException | EmptyStringException e) {
+                            System.out.println(e.getMessage());
+                        }
                         break;
                     case 2:
                         labClass.sortStudentsByAverageGrade();
@@ -44,10 +49,9 @@ public class LabClassUI {
                     default:
                         System.out.println("Некорректный ввод. Попробуйте еще раз.");
                 }
-            } catch (StudentNotFoundException e) {
-                System.out.println(e.getMessage());
-            } catch (EmptyStringException e) {
-                System.out.println(e.getMessage());
+            } catch (InputMismatchException e) {
+                System.out.println("Ошибка: введите число от 1 до 4.");
+                scanner.nextLine(); // Пропускаем неверный ввод
             }
         }
     }
