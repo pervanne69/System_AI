@@ -21,7 +21,7 @@ public class LabClassUI {
 
             try {
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Пропуск новой строки
+                scanner.nextLine();
 
                 switch (choice) {
                     case 1:
@@ -51,7 +51,7 @@ public class LabClassUI {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Ошибка: введите число от 1 до 4.");
-                scanner.nextLine(); // Пропускаем неверный ввод
+                scanner.nextLine();
             }
         }
     }
