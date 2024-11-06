@@ -2,7 +2,7 @@ package ru.mirea.lab20.lab20_1;
 
 import java.io.Serializable;
 
-public class GenericClass<T extends Comparable<T>, V extends Animal & Serializable, K> {
+public class GenericClass<T extends Comparable<T> & CharSequence, V extends Animal & Serializable, K> {
 
 
     private T t;
