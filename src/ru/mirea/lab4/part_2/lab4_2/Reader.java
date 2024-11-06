@@ -1,6 +1,5 @@
 package ru.mirea.lab4.part_2.lab4_2;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 
@@ -26,7 +25,7 @@ public class Reader {
 
     ;
 
-    public void takeBook(String @NotNull ... booksName) {
+    public void takeBook(String ... booksName) {
         System.out.printf("%s взял книги: ", fullName);
         for (String book : booksName) {
             System.out.print(book + ", ");
@@ -36,7 +35,7 @@ public class Reader {
 
     }
 
-    public void takeBook(Book @NotNull ... books) {
+    public void takeBook(Book ... books) {
         System.out.printf("%s взял книги: ", fullName);
         for (Book book : books) {
             System.out.print(book.getBookName() + ", ");
@@ -51,7 +50,7 @@ public class Reader {
 
     ;
 
-    public void returnBook(String @NotNull ... booksName) {
+    public void returnBook(String ... booksName) {
         System.out.printf("%s вернул книги: ", fullName);
         for (String book : booksName) {
             System.out.print(book + ", ");
@@ -61,7 +60,7 @@ public class Reader {
 
     }
 
-    public void returnBook(Book @NotNull ... books) {
+    public void returnBook(Book ... books) {
         System.out.printf("%s вернул книги: ", fullName);
         for (Book book : books) {
             System.out.print(book.getBookName() + ", ");

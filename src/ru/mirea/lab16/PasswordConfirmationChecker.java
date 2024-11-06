@@ -1,6 +1,5 @@
 package ru.mirea.lab16;
 
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -46,7 +45,7 @@ public class PasswordConfirmationChecker {
         frame.setVisible(true);
     }
 
-    private @NotNull JButton getjButton() {
+    private JButton getjButton() {
         JButton checkButton = new JButton("Check Password");
         checkButton.addActionListener(_ -> {
             String password = new String(passwordField.getPassword());
