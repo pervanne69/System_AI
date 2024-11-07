@@ -71,9 +71,28 @@ public class Calculator {
                 isResultDisplayed = false;
             }
 
+
+            // Проверка на отсутствие последовательности операторов
+
+            String currentExpression = textField.getText();
+
+            if (!currentExpression.isEmpty()) {
+                char lastChar = currentExpression.charAt(currentExpression.length() - 1);
+                if (isOperator(lastChar) && isOperator(command.charAt(0))) {
+                    return;
+                }
+            }
+
             if (textField.getText().length() < 16) {
                 textField.setText(textField.getText() + command);
             }
+        }
+
+        public boolean isOperator(char c) {
+            if (c == '-' || c == '+' || c == '*' || c == '/') {
+                return true;
+            }
+            return false;
         }
 
         private void calculateResult() {

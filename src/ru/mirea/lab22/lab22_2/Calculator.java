@@ -44,9 +44,17 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
-        String expression = "2 3 4 * +";
+        String expression1 = "2 3 4 * +";
+        String expression2 = "2 3 4 5 6 * + - /";
         try {
-            double result = evaluate(expression);
+            double result = evaluate(expression1);
+            System.out.println("Результат: " + result);
+        } catch (Exception e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+
+        try {
+            double result = evaluate(expression2);
             System.out.println("Результат: " + result);
         } catch (Exception e) {
             System.out.println("Ошибка: " + e.getMessage());
