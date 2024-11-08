@@ -2,6 +2,8 @@ package ru.mirea.lab22.lab22_2;
 
 import java.util.Stack;
 
+import java.util.Scanner;
+
 public class Calculator {
     public static double evaluate(String expression) {
         Stack<Double> stack = new Stack<>();
@@ -44,8 +46,15 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
         String expression1 = "2 3 4 * +";
         String expression2 = "2 3 4 5 6 * + - /";
+
+        System.out.println("Введите выражение:");
+        String expression3 = sc.nextLine();
+
         try {
             double result = evaluate(expression1);
             System.out.println("Результат: " + result);
@@ -55,6 +64,13 @@ public class Calculator {
 
         try {
             double result = evaluate(expression2);
+            System.out.println("Результат: " + result);
+        } catch (Exception e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+
+        try {
+            double result = evaluate(expression3);
             System.out.println("Результат: " + result);
         } catch (Exception e) {
             System.out.println("Ошибка: " + e.getMessage());
