@@ -1,4 +1,4 @@
-package ru.mirea.lab24.patterns.Factory;
+package ru.mirea.lab24.patterns.factory;
 
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
@@ -11,6 +11,12 @@ public class PC extends Computer {
     private final String ram;
     private String hdd;
     private final String cpu;
+
+    public PC(String ram, String hdd, String cpu) {
+        this.ram = ram;
+        this.hdd = hdd;
+        this.cpu = cpu;
+    }
 
     public PC() {
         SystemInfo si = new SystemInfo();

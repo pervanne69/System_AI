@@ -1,4 +1,4 @@
-package ru.mirea.lab24.patterns.Factory;
+package ru.mirea.lab24.patterns.factory;
 
 public abstract class Computer {
     public abstract String getRam();

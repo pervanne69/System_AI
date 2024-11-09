@@ -1,4 +1,4 @@
-package ru.mirea.lab24.patterns.Factory;
+package ru.mirea.lab24.patterns.factory;
 
 public class Tester {
     public static void main(String[] args) {
