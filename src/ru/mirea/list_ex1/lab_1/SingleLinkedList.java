@@ -3,35 +3,54 @@ package ru.mirea.list_ex1.lab_1;
 import java.util.LinkedList;
 
 public class SingleLinkedList {
-    LinkedList<Node> list = new LinkedList<Node>();
+    private Node head;
 
-    public void deleteNode(int index) {
-        if (index >= 0 && index < list.size()) {
-            list.remove();
-            System.out.println("Элемент удален");
+    public SingleLinkedList() {
+        this.head = null;
+    }
+
+    public void deleteNode(String name) {
+        if (isEmpty()) return;
+
+        if (head.name.equals(name)) {
+            head = head.next;
         } else {
-            System.out.println("Элемент не найден");
+            Node current = head;
+            while (current.next != null && current.next.name.equals(name)) {
+                current = current.next;
+            }
+            if (current.next != null) {
+                current.next = current.next.next;
+            }
         }
     }
 
-    public void addNode() {
-        Node node = new Node();
-        node.readAttributes();
-        list.add(node);
+    public void addNode(String name, int age) {
+        Node newNode = new Node(name, age);
+        if (isEmpty()) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
     }
 
-    public void displayNodes() {
-        for (Node node: list) {
-            node.displayAttributes();
+    public void displayList() {
+        Node current = head;
+        while (current != null) {
+            current.displayAttributes();
+            current = current.next;
         }
     }
 
     public void clearList() {
-        list.clear();
-        System.out.println("Список очищен");
+        head = null;
     }
 
     public boolean isEmpty() {
-        return list.isEmpty();
+        return head == null;
     }
 }

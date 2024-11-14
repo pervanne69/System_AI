@@ -7,7 +7,7 @@ public class Tester {
         SingleLinkedList singleLinkedList = new SingleLinkedList();
         Scanner sc = new Scanner(System.in);
         int choice;
-
+        String name;
         do {
             System.out.println("Меню");
             System.out.println("1. Добавить элемент");
@@ -15,7 +15,7 @@ public class Tester {
             System.out.println("3. Показать элементы");
             System.out.println("4. Очистить список");
             System.out.println("5. Проверить на пустоту");
-            System.out.println("0. Выйти");
+            System.out.println("6. Выход");
             System.out.println("Выберете опцию: ");
             while (!sc.hasNextInt()) {
                 System.out.println("Такой опции не существует, пожалуйста выберете опцию, представленную в меню выше");
@@ -25,19 +25,23 @@ public class Tester {
 
             switch (choice) {
                 case 1:
-                    singleLinkedList.addNode();
-                    break;
-                case 2:
-                    System.out.println("Введите индекс для удаления");
+                    System.out.println("Введите имя:");
+                    name = sc.next();
+                    System.out.println("Введите возраст:");
                     while (!sc.hasNextInt()) {
-                        System.out.println("Введите корректный индекс");
+                        System.out.println("Введите корректное значение! ");
                         sc.next();
                     }
-                    int index = sc.nextInt();
-                    singleLinkedList.deleteNode(index);
+                    int age = sc.nextInt();
+                    singleLinkedList.addNode(name, age);
+                    break;
+                case 2:
+                    System.out.print("Введите имя для удаления: ");
+                    name = sc.next();
+                    singleLinkedList.deleteNode(name);
                     break;
                 case 3:
-                    singleLinkedList.displayNodes();
+                    singleLinkedList.displayList();
                     break;
                 case 4:
                     singleLinkedList.clearList();
@@ -46,7 +50,7 @@ public class Tester {
                     System.out.println("Список пуст: " + singleLinkedList.isEmpty());
                     break;
             }
-        } while (choice != 0);
+        } while (choice != 6);
 
         System.out.println("Программа завершена");
     }
