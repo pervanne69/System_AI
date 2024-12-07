@@ -1,10 +1,10 @@
-package ru.mirea.list_ex1.lab_2;
+package ru.mirea.lab17.lab_1;
 
 import java.util.Scanner;
 
 public class Tester {
     public static void main(String[] args) {
-        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
         Scanner sc = new Scanner(System.in);
         int choice;
         String name;
@@ -33,21 +33,21 @@ public class Tester {
                         sc.next();
                     }
                     int age = sc.nextInt();
-                    doubleLinkedList.addNode(name, age);
+                    singleLinkedList.addNode(name, age);
                     break;
                 case 2:
                     System.out.print("Введите имя для удаления: ");
                     name = sc.next();
-                    doubleLinkedList.deleteNode(name);
+                    singleLinkedList.deleteNode(name);
                     break;
                 case 3:
-                    doubleLinkedList.displayNode();
+                    singleLinkedList.displayList();
                     break;
                 case 4:
-                    doubleLinkedList.clearList();
+                    singleLinkedList.clearList();
                     break;
                 case 5:
-                    System.out.println("Список пуст: " + doubleLinkedList.isEmpty());
+                    System.out.println("Список пуст: " + singleLinkedList.isEmpty());
                     break;
             }
         } while (choice != 6);

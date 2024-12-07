@@ -1,4 +1,4 @@
-package ru.mirea.list_ex1.lab_2;
+package ru.mirea.lab17.lab_2;
 
 public class DoubleNode {
     String name;

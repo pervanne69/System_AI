@@ -1,6 +1,4 @@
-package ru.mirea.list_ex1.lab_1;
-
-import java.util.LinkedList;
+package ru.mirea.lab17.lab_1;
 
 public class SingleLinkedList {
     private Node head;

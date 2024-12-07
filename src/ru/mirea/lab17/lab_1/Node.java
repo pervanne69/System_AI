@@ -1,4 +1,4 @@
-package ru.mirea.list_ex1.lab_1;
+package ru.mirea.lab17.lab_1;
 
 public class Node {
     String name;
